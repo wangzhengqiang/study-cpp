@@ -1,0 +1,22 @@
+.idea
+logs
+.DS_Store
+node_modules
+/dist
+/build
+vendor
+
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+
+*.exe
+*.test
+*.prof
+
+# Log files
+*.log
+*.log.jsonl
+*.log.gz
+
