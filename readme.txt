@@ -40,6 +40,70 @@ gcc ./cpp_stl_guide_code/Chapter5/Chapter5-4.c -o ./build/Chapter5-4
 
 gcc ./cpp_stl_guide_code/Chapter5/Chapter5-5.c -o ./build/Chapter5-5
 
+#空指针应用
+gcc ./cpp_stl_guide_code/Chapter5/Chapter5-6.c -o ./build/Chapter5-6
+./build/Chapter5-6
+str1=111saaac len=8
+
+#空字符串
+
+gcc ./cpp_stl_guide_code/Chapter5/Chapter5-7.c -o ./build/Chapter5-7
+./cpp_stl_guide_code/Chapter5/Chapter5-7.c: In function ‘main’:
+./cpp_stl_guide_code/Chapter5/Chapter5-7.c:6:39: warning: implicit declaration of function ‘strlen’ [-Wimplicit-function-declaration]
+    6 |   printf("str=%s &len=%d ", str, (int)strlen(str));
+      |                                       ^~~~~~
+./cpp_stl_guide_code/Chapter5/Chapter5-7.c:2:1: note: include ‘<string.h>’ or provide a declaration of ‘strlen’
+    1 | #include <stdio.h>
+  +++ |+#include <string.h>
+    2 | //#include <string.h>
+./cpp_stl_guide_code/Chapter5/Chapter5-7.c:6:39: warning: incompatible implicit declaration of built-in function ‘strlen’ [-Wbuiltin-declaration-mismatch]
+    6 |   printf("str=%s &len=%d ", str, (int)strlen(str));
+      |                                       ^~~~~~
+./cpp_stl_guide_code/Chapter5/Chapter5-7.c:6:39: note: include ‘<string.h>’ or provide a declaration of ‘strlen’
+
+缺失string.h头文件；
+
+./build/Chapter5-7
+str= &len=0
+
+#字符串反转
+
+1. 例1：
+gcc ./cpp_stl_guide_code/Chapter5/Chapter5-8.c -o ./build/Chapter5-8
+./build/Chapter5-8
+buf no inverse:abcdefg
+buf:gfedcba
+sh: 1: pause: not found
+
+例如2：
+gcc ./cpp_stl_guide_code/Chapter5/Chapter5-9.c -o ./build/Chapter5-9
+./build/Chapter5-9
+src no inverse1:abcdefg
+Reversed  string:gfedcba
+sh: 1: pause: not found
+
+gcc ./cpp_stl_guide_code/Chapter5/Chapter5-10.c -o ./build/Chapter5-10
+ ./build/Chapter5-10
+Reversed string: olleh
+
+例如3：改进：将逆序的结果存入一个全局变量，并进行打印
+
+gcc ./cpp_stl_guide_code/Chapter5/Chapter5-8-1.c -o ./build/Chapter5-8-1
+./build/Chapter5-8-1
+buf no inverse:abcdefg
+g_buf:gfedcba
+sh: 1: pause: not found
+
+改进：使用局部变量
+gcc ./cpp_stl_guide_code/Chapter5/Chapter5-8-2.c -o ./build/Chapter5-8-2
+./build/Chapter5-8-2
+buf no inverse:abcdefg
+g_buf:gfedcba
+sh: 1: pause: not found
+
+
+
+
 # Chapter6
 
 g++ ./cpp_stl_guide_code/Chapter6/Chapter6-1.cpp -o ./build/Chapter6-1
